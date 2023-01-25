@@ -25,15 +25,27 @@ while (RunProgram)
     Console.WriteLine("There are 11 movies in this list. ");
     Console.WriteLine("What category are you interested in? ");
 
-    string choice = Console.ReadLine().ToLower().Trim();
+    string category = Console.ReadLine().ToLower().Trim();
 
-    static string ByGenre(List<string, string> movie)
+    List<movie> result = Film.Where(m => m.Genre.ToLower().Trim() == category).ToList();
+
+    Console.WriteLine();
+    Console.WriteLine("Here are the matching movies");
+    foreach (movie m in result)
     {
-        string choice = movie.First(movie => movie.Contains(choice));
-        {
-            if(choice == )
-        }
+        Console.WriteLine($"{m.Title}");
     }
+    Console.WriteLine("Whould you like to continue y/n");
+    string choice = Console.ReadLine();
+    if (choice == "y")
+    {
+        RunProgram = true;
+    }
+    else
+    {
+        RunProgram = false;
+    }
+}
 
 
 
